@@ -6,23 +6,36 @@ A tty linux kernel TTY mod driver,example from linux kernel source drivers/tty/t
 make clean
 
 ### build
-`make
+```
+make
+```
 
 ### uninstall the old driver
-`sudo make uninstall
+```
+sudo make uninstall
+```
 
 ### load the new driver
-`sudo make install
+```
+sudo make install
+```
 
 ### check if driver is install
-`lsmod | grep ttynull
+```
+lsmod | grep ttynull
+```
 
 ### see the linux kernel log
-`dmesg | tail
+```
+dmesg | tail
+```
 
 ### make node
+```
 sudo mknod /dev/ttynull c 200 0
 sudo chmod 666 /dev/ttynull
-
+```
 ### test write
+```
 echo "Hello, Kernel!" | sudo tee /dev/ttynull
+```
